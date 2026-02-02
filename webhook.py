@@ -18,6 +18,12 @@ messages_log = []
 async def home():
     return {"status": "WhatsApp Webhook Active", "messages_received": len(messages_log)}
 
+@app.get("/privacy", response_class=HTMLResponse)
+async def privacy_policy():
+    html_content="privacy.html"
+    return HTMLResponse(content=html_content)
+
+
 @app.get("/webhook")
 async def verify_webhook(request: Request):
     """Webhook verification"""
