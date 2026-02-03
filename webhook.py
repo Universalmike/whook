@@ -20,7 +20,69 @@ async def home():
 
 @app.get("/privacy", response_class=HTMLResponse)
 async def privacy_policy():
-    html_content="privacy.html"
+    """Privacy Policy Page"""
+    html_content = """
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Privacy Policy</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 800px;
+                margin: 50px auto;
+                padding: 20px;
+                line-height: 1.6;
+            }
+            h1 { color: #333; }
+            h2 { color: #666; margin-top: 30px; }
+            p { margin: 15px 0; }
+        </style>
+    </head>
+    <body>
+        <h1>Privacy Policy</h1>
+        <p><strong>Last updated:</strong> January 2026</p>
+        
+        <h2>Information We Collect</h2>
+        <p>We collect and store WhatsApp messages sent to our business account for the purpose of 
+        providing customer support and business communication services.</p>
+        
+        <h2>How We Use Your Information</h2>
+        <p>The information collected is used solely for:</p>
+        <ul>
+            <li>Responding to customer inquiries</li>
+            <li>Providing requested services</li>
+            <li>Improving our customer service</li>
+        </ul>
+        
+        <h2>Data Security</h2>
+        <p>We implement appropriate technical and organizational measures to protect your personal 
+        data against unauthorized access, alteration, disclosure, or destruction.</p>
+        
+        <h2>Data Sharing</h2>
+        <p>We do not sell, trade, or share your personal information with third parties except as 
+        required by law or with your explicit consent.</p>
+        
+        <h2>Your Rights</h2>
+        <p>You have the right to:</p>
+        <ul>
+            <li>Access your personal data</li>
+            <li>Request deletion of your data</li>
+            <li>Object to processing of your data</li>
+        </ul>
+        
+        <h2>Contact Us</h2>
+        <p>If you have questions about this Privacy Policy, please contact us at:<br>
+        Email: privacy@yourcompany.com</p>
+        
+        <h2>Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. We will notify you of any changes 
+        by posting the new Privacy Policy on this page.</p>
+    </body>
+    </html>
+    """
     return HTMLResponse(content=html_content)
 
 
